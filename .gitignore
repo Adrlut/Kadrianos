@@ -1,0 +1,13 @@
+# build/cache
+.next
+node_modules
+out
+
+# env
+.env.local
+.env*
+
+# systemowe
+.DS_Store
+*.log
+*.lock

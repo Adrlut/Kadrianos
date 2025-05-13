@@ -1,0 +1,17 @@
+{
+  "name": "Kadrianos",
+  "short_name": "Kadrianos",
+  "description": "AI personality tool for job seekers",
+  "icons": [
+    {
+      "src": "/Kadrianos.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#202123",
+  "background_color": "#202123"
+}
+
