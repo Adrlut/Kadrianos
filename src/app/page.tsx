@@ -18,15 +18,15 @@ const KadrianosPage: React.FC = () => {
 
   const promptChips = [
     { id: 'who', label: 'Kim jesteś?' },
-    { id: 'what', label: 'Co potrafisz?' },
-    { id: 'skills', label: 'Jakie są Twoje główne umiejętności?' },
+    { id: 'what', label: 'Jakie pytania mogę zadać?' },
+    { id: 'skills', label: 'Jakie są Twoje najlepsze umiejętności?' },
   ];
 
   return (
     <>
       <Head>
         <title>Kadrianos</title>
-        <meta name="description" content="Moje osobiste narzędzie AI do pracy nad sobą i poszukiwania pracy" />
+        <meta name="description" content="Moje interaktywne CV w formie AI." />
         <link rel="icon" href="/Kadrianos.png" />
       </Head>
 
@@ -35,7 +35,7 @@ const KadrianosPage: React.FC = () => {
           <Image src="/Kadrianos.png" alt="Kadrianos Avatar" width={64} height={64} className="mr-4 rounded-full" />
           <div>
             <h1 className="text-3xl font-orbitron font-bold">Kadrianos</h1>
-            <p className="text-sm text-gray-400">Moje osobiste narzędzie AI do pracy nad sobą i poszukiwania pracy</p>
+            <p className="text-sm text-gray-400">Moje interaktywne CV w formie AI.</p>
           </div>
         </header>
 
