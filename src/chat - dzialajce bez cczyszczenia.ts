@@ -12,11 +12,8 @@ export async function sendMessage(userText: string, threadId?: string) {
     throw new Error(errorMsg);
   }
 
-  // Usuwanie źródeł w formacie 【...】
-  const cleanedAnswer = (data.answer as string).replace(/【[^】]+】/g, "");
-
   return {
-    answer: cleanedAnswer,
+    answer: data.answer as string,
     threadId: data.threadId as string
   };
 }
