@@ -1,6 +1,6 @@
 import { sendMessage } from "./chat";
 
-export function initChatUI(language: string = "pl") {
+export function initChatUI() {
   const form = document.querySelector("#chat-form") as HTMLFormElement;
   const input = document.querySelector("#chat-input") as HTMLInputElement;
   const list = document.querySelector("#chat-list") as HTMLElement;
@@ -19,15 +19,9 @@ export function initChatUI(language: string = "pl") {
 
       try {
         input.disabled = true;
-        const thinkingBubble = appendBubble("assistant", "Kadrianos ...");
+        const thinkingBubble = appendBubble("assistant", "Kadrianos pisze...");
 
-        // ➡️ Dodajemy automatyczne doklejanie "Respond in English."
-        let promptText = text;
-        if (language === "en") {
-          promptText = "Respond in English. " + text;
-        }
-
-        const res = await sendMessage(promptText, threadId);
+        const res = await sendMessage(text, threadId);
         threadId = res.threadId;
 
         if (thinkingBubble && thinkingBubble.parentNode) {
@@ -45,7 +39,7 @@ export function initChatUI(language: string = "pl") {
         console.error(err);
       } finally {
         input.disabled = false;
-        if (input) input.focus();
+        if(input) input.focus();
       }
     });
   } else {
@@ -65,10 +59,10 @@ export function initChatUI(language: string = "pl") {
         delete (li as any).intervalId;
     }
 
-    if (text === "Kadrianos ...") {
+    if (text === "Kadrianos pisze...") {
       li.classList.add("thinking-bubble");
       let dotCount = 1;
-      const thinkingText = "Kadrianos ";
+      const thinkingText = "Kadrianos pisze";
       li.textContent = thinkingText + "."; // Initial text
       const intervalId = setInterval(() => {
         dotCount = (dotCount % 3) + 1;
@@ -114,3 +108,4 @@ export function initChatUI(language: string = "pl") {
   });
   console.log("Chat UI Initialized by ui.ts");
 }
+

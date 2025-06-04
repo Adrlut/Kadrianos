@@ -3,28 +3,28 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link'; // Dodaj import Link
-import { initChatUI } from '../ui'; 
+import Link from 'next/link'; // Import Link
+import { initChatUI } from '../../ui'; // Poprawny import z ../../ui
 
-const KadrianosPage: React.FC = () => {
+const KadrianosPageEn: React.FC = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      initChatUI("pl");
-      console.log("KadrianosPage mounted, initChatUI('pl') called.");
+      initChatUI("en");
+      console.log("KadrianosPage EN mounted, initChatUI('en') called.");
     }
   }, []);
 
   const promptChips = [
-    { id: 'who', label: 'Kim jesteś?' },
-    { id: 'what', label: 'Jakie pytania mogę zadać?' },
-    { id: 'skills', label: 'Jakie są Twoje najlepsze umiejętności?' },
+    { id: 'who', label: 'Who are you?' },
+    { id: 'what', label: 'What questions can I ask?' },
+    { id: 'skills', label: 'What are your top skills?' },
   ];
 
   return (
     <>
       <Head>
-        <title>Kadrianos</title>
-        <meta name="description" content="Moje interaktywne CV w formie AI." />
+        <title>Kadrianos (EN)</title>
+        <meta name="description" content="My interactive Resume in AI form." />
         <link rel="icon" href="/Kadrianos.png" />
       </Head>
 
@@ -41,15 +41,15 @@ const KadrianosPage: React.FC = () => {
             <div>
               <h1 className="text-3xl font-orbitron font-bold">Kadrianos</h1>
               <p className="text-sm text-gray-400">
-                Moje interaktywne CV w formie AI.
+                My interactive Resume in AI form.
               </p>
             </div>
           </div>
-          <Link href="/en">
+          <Link href="/">
             <button
               className="text-sm bg-button-bg hover:bg-button-hover-bg text-white px-3 py-1 rounded-md transition-colors duration-150"
             >
-              EN
+              PL
             </button>
           </Link>
         </header>
@@ -74,7 +74,7 @@ const KadrianosPage: React.FC = () => {
           </ul>
         </main>
 
-        <footer className="mt-auto pb-4 sticky bottom-0 bg-chat-bg">
+        <footer className="mt-auto pb-4">
           <form
             id="chat-form"
             className="flex items-center bg-chat-input-bg p-3 rounded-lg"
@@ -82,7 +82,7 @@ const KadrianosPage: React.FC = () => {
             <input
               id="chat-input"
               type="text"
-              placeholder="Napisz wiadomość..."
+              placeholder="Type a message..."
               className="flex-grow bg-transparent text-white placeholder-gray-400 focus:outline-none"
             />
             <button
@@ -105,4 +105,4 @@ const KadrianosPage: React.FC = () => {
   );
 };
 
-export default KadrianosPage;
+export default KadrianosPageEn;
